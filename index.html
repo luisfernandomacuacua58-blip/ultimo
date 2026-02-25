@@ -16,7 +16,7 @@
     .grid{display:grid;gap:var(--gap)} .two{grid-template-columns:1.2fr .8fr} @media(max-width:920px){.two{grid-template-columns:1fr}}
     .btn{display:inline-block;padding:14px 20px;border-radius:12px;background:var(--accent);color:#0b1320;font-weight:700;box-shadow:var(--shadow);transition:.2s} .btn:hover{background:var(--accent2);transform:translateY(-1px)} .btn.outline{background:transparent;border:2px solid var(--accent);color:#fff}
     .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(154,204,76,.15);color:#b9f074;border:1px solid rgba(154,204,76,.35);font-weight:600}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .card{background:rgba(15,19,64,.45);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
     .muted{color:var(--muted)} .h1{font-size:clamp(32px,4.5vw,54px);line-height:1.1;margin:0 0 10px} .h2{font-size:clamp(22px,3vw,32px);margin:0 0 6px} .h3{font-size:20px;margin:0 0 6px} .lead{font-size:clamp(16px,2.2vw,20px);color:#e8eaf0}
     .hero{align-items:center} .hero .media{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08)} .hero img{width:100%;display:block}
     .icons{display:flex;gap:14px;align-items:center;flex-wrap:wrap} .sp{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);margin:40px 0}
@@ -24,7 +24,10 @@
     .gallery{display:grid;gap:14px} .gallery.cols-3{grid-template-columns:repeat(3,1fr)} .gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
     @media(max-width:920px){.gallery.cols-3{grid-template-columns:1fr 1fr}} @media(max-width:560px){.gallery.cols-3{grid-template-columns:1fr}}
     header.hero-bg{background:url('hero.jpg') center/cover no-repeat} header.hero-bg .overlay{background:linear-gradient(180deg,rgba(13,12,72,.55),rgba(17,24,39,.85))} header.hero-bg .wrap{padding:84px 20px} .overlay{backdrop-filter: blur(0.5px)} footer .icons{justify-content:center}
-  </style>
+  
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
 </head>
 <body>
   <header class="hero-bg"><div class="overlay"><div class="wrap grid two hero">
@@ -84,7 +87,9 @@ Envie a sua ideia e receba um orçamento personalizado em poucos minutos.</p>
 
     <div class="sp"></div>
 
-    <section id="reviews" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <h2 class="h2" style="margin-top:10px">O que os clientes dizem</h2>
+<p class="muted" style="margin-top:-8px">Avaliações reais de clientes e parceiros</p>
+<section id="reviews" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
       <div class="card" style="padding:18px"><p>“Trabalho rápido e criativo. Entregou exatamente o que a nossa marca precisava.”</p><p class="muted">— Cliente Local</p></div>
       <div class="card" style="padding:18px"><p>“Excelente comunicação e identidade visual impecável. Recomendo!”</p><p class="muted">— Pequeno Negócio</p></div>
       <div class="card" style="padding:18px"><p>“Do briefing ao resultado final, foi tudo muito profissional.”</p><p class="muted">— Empreendedor</p></div>
@@ -119,5 +124,6 @@ Envie a sua ideia e receba um orçamento personalizado em poucos minutos.</p>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.447-2.136 2.942v5.664H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.603 0 4.27 2.372 4.27 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zM7.114 20.452H3.556V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn
   </a>
 </div><div style="margin-top:8px">© 2026 Luis Macuácua — Design Gráfico</div></footer>
+<script>(function(){var e=[].slice.call(document.querySelectorAll('.reveal'));if(!("IntersectionObserver"in window)){e.forEach(function(t){t.classList.add('in')});return}var o=new IntersectionObserver(function(t){t.forEach(function(t){t.isIntersecting&&(t.target.classList.add('in'),o.unobserve(t.target))})},{threshold:.12,rootMargin:"0px 0px -10% 0px"});e.forEach(function(t){o.observe(t)})})();</script>
 </body>
 </html>
